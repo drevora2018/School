@@ -1,0 +1,15 @@
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\KnapSackSol.csproj.AssemblyReference.cache
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\KnapSackSol.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\KnapSackSol.AssemblyInfoInputs.cache
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\KnapSackSol.AssemblyInfo.cs
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\KnapSackSol.csproj.CoreCompileInputs.cache
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\bin\Debug\net6.0\KnapSackSol.exe
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\bin\Debug\net6.0\KnapSackSol.deps.json
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\bin\Debug\net6.0\KnapSackSol.runtimeconfig.json
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\bin\Debug\net6.0\KnapSackSol.dll
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\bin\Debug\net6.0\KnapSackSol.pdb
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\KnapSackSol.dll
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\refint\KnapSackSol.dll
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\KnapSackSol.pdb
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\KnapSackSol.genruntimeconfig.cache
+C:\Users\Drevora\source\repos\KnapSackSol\KnapSackSol\obj\Debug\net6.0\ref\KnapSackSol.dll
