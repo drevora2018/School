@@ -10,17 +10,35 @@ namespace TSP_GA
     {
         public double Fitness = 0;
         public int[] CitiesVisited = new int[52];
-        MainProgram main = new MainProgram();
+        public List<Cities> Cities = new List<Cities>();
+        Program pro = new Program();
         
-        
-        public void CalculcateFitness()
+        public Individuals(int[] genes, List<Cities> cities)
         {
-            for (int i = 0; i < CitiesVisited.Length; i = i + 2)
+            Cities = cities;
+            CitiesVisited = genes;
+            //CalculcateFitness();
+        }
+        public Individuals()
+        {
+            //CalculcateFitness();
+        }
+        
+        
+
+        public double CalculcateExternalFitness()
+        {
+            var fit = 0.0;
+            for (int i = 0; i < CitiesVisited.Length-1; i = i + 1)
             {
-                var other = main.cities.Find(x => x.ID == CitiesVisited[i]); 
-                var me = main.cities.Find(x => x.ID == CitiesVisited[i + 1]);
-                Fitness += Math.Sqrt(Math.Pow((other.X - me.X), 2) + Math.Pow((other.Y - me.Y), 2));
+                var other = Cities[i];
+                var me = Cities[i + 1];
+                if (other != null || me != null) { fit += Math.Sqrt(Math.Pow((other.X - me.X), 2) + Math.Pow((other.Y - me.Y), 2)); }
+                else break;
+
             }
+            Fitness = fit;
+            return fit;
         }
 
     }

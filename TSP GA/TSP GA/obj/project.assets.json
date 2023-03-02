@@ -8,28 +8,20 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Drevora\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Drevora\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Drevora\\source\\repos\\TSP GA\\TSP GA\\TSP GA.csproj",
+      "projectUniqueName": "C:\\Users\\Drevora\\Documents\\GitHub\\School\\TSP GA\\TSP GA\\TSP GA.csproj",
       "projectName": "TSP GA",
-      "projectPath": "C:\\Users\\Drevora\\source\\repos\\TSP GA\\TSP GA\\TSP GA.csproj",
+      "projectPath": "C:\\Users\\Drevora\\Documents\\GitHub\\School\\TSP GA\\TSP GA\\TSP GA.csproj",
       "packagesPath": "C:\\Users\\Drevora\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Drevora\\source\\repos\\TSP GA\\TSP GA\\obj\\",
+      "outputPath": "C:\\Users\\Drevora\\Documents\\GitHub\\School\\TSP GA\\TSP GA\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
         "C:\\Users\\Drevora\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -69,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

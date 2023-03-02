@@ -26,37 +26,45 @@ namespace TSP_GA
         /// Selects the best individual from the sample population. 
         /// </summary>
         /// <param name="TournamentSize"></param>
-        public List<Individuals> TournamentSelection(int TournamentSize)
+        public List<Individuals> TournamentSelection(int tournamentSize, int numLosersToKeep)
         {
             Random rnd = new Random();
-            List<Individuals> tourneyList = new List<Individuals>();
-            Individuals bestInd = new Individuals();
             List<Individuals> best = new List<Individuals>();
             List<Individuals> losers = new List<Individuals>();
-            while(individuals.Count != 0)
+
+            while (individuals.Count > 0)
             {
-                for (int i = 0; i < TournamentSize; i++)
+                if (individuals.Count < tournamentSize) 
+                    break;
+                List<Individuals> tournament = new List<Individuals>();
+                for (int i = 0; i < tournamentSize; i++)
                 {
                     int index = rnd.Next(0, individuals.Count);
-                    var individual = individuals[index];
+                    tournament.Add(individuals[index]);
                     individuals.RemoveAt(index);
-                    tourneyList.Add(individual);
                 }
-                for (int i = 0; i < TournamentSize; i++)
-                {
-                    if (tourneyList[i].Fitness > bestInd.Fitness)
-                    {
-                        bestInd = tourneyList[i];
-                    }
-                    else
-                    {
-                        losers.Add(tourneyList[i]);
-                    }
-                }
-                best.Add(bestInd);
-                individuals.AddRange(losers);
 
+                Individuals bestInd = tournament[0];
+                for (int i = 1; i < tournament.Count; i++)
+                {
+                    if (tournament[i].Fitness > bestInd.Fitness)
+                    {
+                        bestInd = tournament[i];
+                    }
+                }
+
+                best.Add(bestInd);
+
+                // Add some of the losers back to the population
+                if (tournament.Count > numLosersToKeep)
+                {
+                    tournament.Sort((x, y) => y.Fitness.CompareTo(x.Fitness));
+                    losers.AddRange(tournament.GetRange(numLosersToKeep, tournament.Count - numLosersToKeep));
+                }
             }
+            individuals.AddRange(losers);
+            
+
             return best;
         }
 
@@ -70,18 +78,33 @@ namespace TSP_GA
         {
             Random rand = new Random();
             int[] crossover = new int[52];
+            //select a random range in crossover
             int point1 = rand.Next(0, 52);
-            int point2 = rand.Next(point1, 52);
-
-            Parent2.CitiesVisited.CopyTo(crossover, 0);
+            int point2 = rand.Next(point1 + 1, 52);
+            
             for (int j = point1; j < point2; j++)
             {
                 crossover[j] = Parent1.CitiesVisited[j];
             }
             
-            var returnvalue = new Individuals();
-            returnvalue.CitiesVisited = crossover;
-            return returnvalue;
+            List<int> remainingGenes = new List<int>();
+            for (int i = 0; i < 52; i++)
+            {
+                if (!crossover.Contains(Parent2.CitiesVisited[i]))
+                {
+                    remainingGenes.Add(Parent2.CitiesVisited[i]);
+                }
+            }
+
+            for (int i = 0; i < crossover.Length; i++)
+            {
+                if (crossover[i] == 0)
+                {
+                    crossover[i] = remainingGenes[i];
+                }
+            }
+
+            return new Individuals(crossover, cities);
         }
 
         /// <summary>
