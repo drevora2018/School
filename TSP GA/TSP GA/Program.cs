@@ -6,61 +6,93 @@ namespace TSP_GA
     {
         public static void Main()
         {
+            List<Individuals> BestIndividualPerRun = new List<Individuals>();
             int[] Variables = { 2,         //Tournament Size
                                 1,          //Elitism
-                                10,          //Denominator (Mutation and crossover chance), 5 means 1/5 chance, 10 means 1/10 chance
-                                10000,     //Generations to run for (*2 fitness calculations)
-                                1000        //Population size
+                                500,          //Denominator (Mutation and crossover chance), 5 means 1/5 chance, 10 means 1/10 chance
+                                210,     //Generations to run for (*2 fitness calculations)
+                                3500        //Population size
             };
-            Random rand = new Random();
-            MainProgram program = new MainProgram();
-            int generations = 0;
-            Individuals best = new Individuals();
-            program.AddToDS(@"C:\Users\Drevora\Documents\GitHub\School\TSP GA\TSP GA\berlin52.txt");
-            for (int i = 0; i < Variables[4]; i++)
+            for (int l = 0; l < 10; l++)
             {
-                int[] cities = new List<int>(Enumerable.Range(0, 52)).ToArray();
-                var ActualCities = new List<Cities>();
-                int n = cities.Count();
-                while (n > 1)
+                Random rand = new Random();
+                MainProgram program = new MainProgram();
+                int generations = 0;
+                Individuals best = new Individuals();
+                program.AddToDS(@"C:\Users\Drevora\Documents\GitHub\School\TSP GA\TSP GA\berlin52.txt");
+                for (int i = 0; i < Variables[4]; i++)
                 {
-                    n--;
-                    int k = rand.Next(n + 1);
-                    int value = cities[k];
-                    cities[k] = cities[n];
-                    cities[n] = value;
+                    int[] cities = new List<int>(Enumerable.Range(1, 51)).ToArray();
+                    var ActualCities = new List<Cities>();
+                    int n = cities.Count();
+                    while (n > 1)
+                    {
+                        n--;
+                        int k = rand.Next(n + 1);
+                        int value = cities[k];
+                        cities[k] = cities[n];
+                        cities[n] = value;
+                    }
+                    int[] citiesNew = new int[cities.Length + 2];
+                    int j = 0;
+                    foreach (var item in cities.Append(0).Prepend(0))
+                    {
+                        ActualCities.Add(program.cities.Find(x => x.ID == item));
+                        citiesNew[j] = item; j++;
+                    }
+                    program.individuals.Add(new Individuals(citiesNew, ActualCities));
+
+
+
                 }
-                foreach (var item in cities)
+                foreach (var item in program.individuals)
                 {
-                    ActualCities.Add(program.cities.Find(x => x.ID == item));
+                    item.CalculcateExternalFitness();
                 }
-                program.individuals.Add(new Individuals(cities, ActualCities));
 
-            }
 
-            
-            while (generations < Variables[3])
-            {
-                var list = program.TournamentSelection(Variables[0], Variables[1]);
-                program.individuals.Clear();
-                program.individuals.AddRange(list);
-                
 
-                foreach ( var item in program.individuals )
+                while (generations < Variables[3])
                 {
-                    item.Fitness = item.CalculcateExternalFitness();
+                    var list = program.TournamentSelection(Variables[0], Variables[1], Variables[2]);
+                    program.individuals.Clear();
+                    program.individuals.AddRange(list);
+
+
+                    foreach (var item in program.individuals)
+                    {
+                        item.Fitness = item.CalculcateExternalFitness();
+                    }
+
+                    //print the individual with highest fitness
+                    foreach (var item in program.individuals.OrderBy(x => x.Fitness).Take(1))
+                    {
+                        Console.WriteLine($"Best Fitness: {item.Fitness}");
+
+                    }
+                    generations++;
                 }
-                //print the individual with highest fitness
+
                 foreach (var item in program.individuals.OrderBy(x => x.Fitness).Take(1))
                 {
                     Console.WriteLine($"Best Fitness: {item.Fitness}");
-
+                    BestIndividualPerRun.Add(item);
                 }
 
-                generations++;
-            }
-            
 
+                program.individuals.Clear();
+            }
+
+            for (int i = 0; i < BestIndividualPerRun.Count; i++)
+            {
+                Console.WriteLine($"BestIndividual in run{i}: \nFitness: {BestIndividualPerRun[i].Fitness}\nCities (In order): \n");
+                foreach (var item in BestIndividualPerRun[i].CitiesVisited)
+                {
+                    Console.Write(item + "-");
+                }
+                Console.WriteLine("\n----------------------------------------------------------");
+            }
         }
+            
     }
 }

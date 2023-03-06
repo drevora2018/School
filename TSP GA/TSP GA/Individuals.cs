@@ -9,7 +9,7 @@ namespace TSP_GA
     internal class Individuals
     {
         public double Fitness = 0;
-        public int[] CitiesVisited = new int[52];
+        public int[] CitiesVisited = new int[53];
         public List<Cities> Cities = new List<Cities>();
         Program pro = new Program();
         
