@@ -7,7 +7,7 @@ namespace Ai_lab_2
         {
             Stopwatch sw = Stopwatch.StartNew();
             Sudoku sudoku = new Sudoku();
-            sudoku.PushSudokuFromFile(@"C:\Users\Drevora\source\repos\Ai lab 2\Ai lab 2\Sudoku.txt");
+            sudoku.PushSudokuFromFile(@"C:\Users\Drevora\Documents\Port Simulator\PortSimulator\School\Ai lab 2\Ai lab 2\Sudoku.txt");
             sudoku.SolveEachSudokuIndividually();
             sw.Stop();
             Console.WriteLine("Time:" + sw.ElapsedMilliseconds + "ms");

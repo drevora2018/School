@@ -1,21 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Drevora\\Documents\\GitHub\\School\\TSP GA\\TSP GA\\TSP GA.csproj": {}
+    "C:\\Users\\Drevora\\Documents\\Port Simulator\\PortSimulator\\School\\TSP GA\\TSP GA\\TSP GA.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Drevora\\Documents\\GitHub\\School\\TSP GA\\TSP GA\\TSP GA.csproj": {
+    "C:\\Users\\Drevora\\Documents\\Port Simulator\\PortSimulator\\School\\TSP GA\\TSP GA\\TSP GA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Drevora\\Documents\\GitHub\\School\\TSP GA\\TSP GA\\TSP GA.csproj",
+        "projectUniqueName": "C:\\Users\\Drevora\\Documents\\Port Simulator\\PortSimulator\\School\\TSP GA\\TSP GA\\TSP GA.csproj",
         "projectName": "TSP GA",
-        "projectPath": "C:\\Users\\Drevora\\Documents\\GitHub\\School\\TSP GA\\TSP GA\\TSP GA.csproj",
+        "projectPath": "C:\\Users\\Drevora\\Documents\\Port Simulator\\PortSimulator\\School\\TSP GA\\TSP GA\\TSP GA.csproj",
         "packagesPath": "C:\\Users\\Drevora\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Drevora\\Documents\\GitHub\\School\\TSP GA\\TSP GA\\obj\\",
+        "outputPath": "C:\\Users\\Drevora\\Documents\\Port Simulator\\PortSimulator\\School\\TSP GA\\TSP GA\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\Drevora\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -25,8 +31,7 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net70": {
             "projectReferences": {}
           }
         },
@@ -37,25 +42,13 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "net70": {
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
         }
       }
     }
